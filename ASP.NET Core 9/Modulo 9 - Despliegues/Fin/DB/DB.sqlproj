@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>DB</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{5f35d3cb-7403-41a6-be63-9fbbb97aadc5}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql160DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>DB</RootNamespace>
+    <AssemblyName>DB</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+    <ValidateCasingOnIdentifiers>False</ValidateCasingOnIdentifiers>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="dbo\User Defined Types\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\Generos.sql" />
+    <Build Include="dbo\Tables\Actores.sql" />
+    <Build Include="dbo\Tables\Peliculas.sql" />
+    <Build Include="dbo\Tables\GenerosPeliculas.sql" />
+    <Build Include="dbo\Tables\ActoresPeliculas.sql" />
+    <Build Include="dbo\Tables\Errores.sql" />
+    <Build Include="dbo\Tables\Roles.sql" />
+    <Build Include="dbo\Tables\RolesClaims.sql" />
+    <Build Include="dbo\Tables\Usuarios.sql" />
+    <Build Include="dbo\Tables\UsuariosClaims.sql" />
+    <Build Include="dbo\Tables\UsuariosLogins.sql" />
+    <Build Include="dbo\Tables\UsuariosRoles.sql" />
+    <Build Include="dbo\Tables\UsuariosTokens.sql" />
+    <Build Include="dbo\Tables\Comentarios.sql" />
+    <Build Include="dbo\Stored Procedures\Generos_ObtenerTodos.sql" />
+    <Build Include="dbo\Stored Procedures\Generos_ObtenerPorId.sql" />
+    <Build Include="dbo\Stored Procedures\Generos_Crear.sql" />
+    <Build Include="dbo\Stored Procedures\Generos_ExistePorId.sql" />
+    <Build Include="dbo\Stored Procedures\Generos_Actualizar.sql" />
+    <Build Include="dbo\Stored Procedures\Generos_Borrar.sql" />
+    <Build Include="dbo\Stored Procedures\Actores_ObtenerTodos.sql" />
+    <Build Include="dbo\Stored Procedures\Actores_ObtenerPorId.sql" />
+    <Build Include="dbo\Stored Procedures\Actores_Crear.sql" />
+    <Build Include="dbo\Stored Procedures\Actores_Actualizar.sql" />
+    <Build Include="dbo\Stored Procedures\Actores_ExistePorId.sql" />
+    <Build Include="dbo\Stored Procedures\Actores_Borrar.sql" />
+    <Build Include="dbo\Stored Procedures\Actores_ObtenerPorNombre.sql" />
+    <Build Include="dbo\Stored Procedures\Actores_Cantidad.sql" />
+    <Build Include="dbo\Stored Procedures\Peliculas_ObtenerTodos.sql" />
+    <Build Include="dbo\Stored Procedures\Peliculas_ObtenerPorId.sql" />
+    <Build Include="dbo\Stored Procedures\Peliculas_ExistePorId.sql" />
+    <Build Include="dbo\Stored Procedures\Peliculas_Crear.sql" />
+    <Build Include="dbo\Stored Procedures\Peliculas_Actualizar.sql" />
+    <Build Include="dbo\Stored Procedures\Peliculas_Borrar.sql" />
+    <Build Include="dbo\Stored Procedures\Peliculas_Cantidad.sql" />
+    <Build Include="dbo\Stored Procedures\Comentarios_ObtenerTodos.sql" />
+    <Build Include="dbo\Stored Procedures\Comentarios_ObtenerPorId.sql" />
+    <Build Include="dbo\Stored Procedures\Comentarios_Crear.sql" />
+    <Build Include="dbo\Stored Procedures\Comentarios_ExistePorId.sql" />
+    <Build Include="dbo\Stored Procedures\Comentarios_Actualizar.sql" />
+    <Build Include="dbo\Stored Procedures\Comentarios_Borrar.sql" />
+    <Build Include="dbo\Stored Procedures\Peliculas_AsignarGeneros.sql" />
+    <Build Include="dbo\Stored Procedures\Generos_ObtenerVariosPorId.sql" />
+    <Build Include="dbo\Stored Procedures\Peliculas_AsignarActores.sql" />
+    <Build Include="dbo\Stored Procedures\Actores_ObtenerVariosPorId.sql" />
+    <Build Include="dbo\Stored Procedures\Generos_ExistePorIdYNombre.sql" />
+    <Build Include="dbo\Stored Procedures\Errores_Crear.sql" />
+    <Build Include="dbo\Stored Procedures\Usuarios_BuscarPorEmail.sql" />
+    <Build Include="dbo\Stored Procedures\Usuarios_Crear.sql" />
+    <Build Include="dbo\Stored Procedures\Usuarios_ObtenerClaims.sql" />
+    <Build Include="dbo\Stored Procedures\Peliculas_Filtrar.sql" />
+    <Build Include="dbo\User Defined Types\ListadoEnteros.sql" />
+    <Build Include="dbo\User Defined Types\ListadoActores.sql" />
+  </ItemGroup>
+</Project>
